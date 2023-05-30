@@ -1,0 +1,37 @@
+
+Azure Active Directory details
+------------------------------
+
+TenantID = d751ec74-cfd9-47e5-a4c2-d7fa24503caa
+
+
+Primary Connection String -
+COSMOSDB API for MongoDB
+--------------------------
+mongodb://fse4-cosmos-mongo:DE2rgYXMFLHi1AzXmXPKyFJMgzXb2NqN3VQeHfoJn0tCVKzaa5uW7RZ962ujBZZBIdGFDWgzJCK1ACDbQ29c2Q==@fse4-cosmos-mongo.mongo.cosmos.azure.com:10255/?ssl=true&retrywrites=false&replicaSet=globaldb&maxIdleTimeMS=120000&appName=@fse4-cosmos-mongo@
+
+
+
+MongoClient mongoClient = new MongoClient(new MongoClientURI("mongodb://fse4-cosmos-mongo:DE2rgYXMFLHi1AzXmXPKyFJMgzXb2NqN3VQeHfoJn0tCVKzaa5uW7RZ962ujBZZBIdGFDWgzJCK1ACDbQ29c2Q==@fse4-cosmos-mongo.mongo.cosmos.azure.com:10255/?ssl=true&retrywrites=false&replicaSet=globaldb&maxIdleTimeMS=120000&appName=@fse4-cosmos-mongo@"));
+
+
+Step 1
+	- Goto Active Directory
+	- Goto App Registration - Complete the App Register process
+
+	Application (client) ID:	798dde31-0ff1-4fd6-987a-fc240ee07e73   (Client id in Spring Boot)
+	Object ID:			6a4ce0d7-c803-43f8-bb46-c6167e9feb65
+	Directory (tenant) ID:		d751ec74-cfd9-47e5-a4c2-d7fa24503caa   (Tenant ID in Spring Boot)
+
+
+Step 2
+	- Goto Certificates and Secrets
+	- New Client Secret
+	- Secret Value and Secret Key will be generated  (PLEASE COPY Them in first instance only) they will no longer be visible
+	- SECRET VALUE = -NO8Q~BwCW_mHMSoD3Soj2s8B1UyQ1KsoMDlxdmy   (CLIENT KEY in the SPRING BOOT app)
+	- SECRET ID = 5167beb3-8e7c-4846-9623-f4fde51fa26c
+
+Step 3
+	- Goto Key Vault and create a new one
+	- Secure the Databse Username and Password inside the Key Vault
+	- Once created copy the KEY VAULT URI = https://fse4-azure-search-kv.vault.azure.net/    (uri in Spring Boot)
